@@ -5,7 +5,7 @@ import com.protocol.grpc.PingPongServiceOuterClass.SayPingRequest;
 import com.protocol.grpc.PingPongServiceOuterClass.SayPongResponse;
 import io.grpc.stub.StreamObserver;
 
-public class PingPongServiceImpl extends PingPongServiceImplBase {
+public class PingPongServiceImpl extends PingPongServiceImplBase {      //PingPongServiceImplBase  - from generated resources (Target)
 
     @Override
     public void say(SayPingRequest request, StreamObserver<SayPongResponse> responseObserver) {     //request from client

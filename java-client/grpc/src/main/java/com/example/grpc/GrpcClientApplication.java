@@ -17,10 +17,10 @@ public class GrpcClientApplication {
                         .build();
 
         PingPongServiceGrpc.PingPongServiceBlockingStub stub =			//stub == object that can go to server and invoke method say
-	       PingPongServiceGrpc.newBlockingStub(channel);
+	       PingPongServiceGrpc.newBlockingStub(channel);			  //PingPongServiceBlockingStub  - from generated resources (Target)
 
         PingPongServiceOuterClass.SayPingRequest request =			//create request which server going to use
-	       PingPongServiceOuterClass.SayPingRequest.newBuilder()
+	       PingPongServiceOuterClass.SayPingRequest.newBuilder()		  //PingPongServiceOuterClass  - from generated resources (Target)
 		      .setPingWord("Ping...")
 		      .setGameName("tennis")
 		      .build();
