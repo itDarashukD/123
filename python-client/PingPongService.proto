@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.protocol.grpc;
+
+message SayPingRequest{
+  string gameName = 3;
+  string pingWord = 1;
+}
+
+message SayPongResponse{
+  string pongWord = 2;
+  string gameDescription = 4;
+}
+
+service PingPongService{
+  rpc say(SayPingRequest) returns (SayPongResponse);
+}
