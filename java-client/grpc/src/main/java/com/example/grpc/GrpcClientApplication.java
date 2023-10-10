@@ -12,21 +12,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GrpcClientApplication {
 
     public static void main(String[] args) throws InterruptedException, IOException {
-        ManagedChannel channel =
-	       ManagedChannelBuilder.forTarget("localhost:9090")
+        ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:9090")  //server location + port
                         .usePlaintext()
                         .build();
 
-        PingPongServiceGrpc.PingPongServiceBlockingStub stub =
+        PingPongServiceGrpc.PingPongServiceBlockingStub stub =			//stub == object that can go to server and invoke method say
 	       PingPongServiceGrpc.newBlockingStub(channel);
 
-        PingPongServiceOuterClass.SayPingRequest request =
+        PingPongServiceOuterClass.SayPingRequest request =			//create request which server going to use
 	       PingPongServiceOuterClass.SayPingRequest.newBuilder()
 		      .setPingWord("Ping...")
 		      .setGameName("tennis")
 		      .build();
 
-        final SayPongResponse response = stub.say(request);
+        final SayPongResponse response = stub.say(request);			//response returned from server
         System.out.println(response);
         channel.shutdown();
 

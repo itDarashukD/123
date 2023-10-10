@@ -2,15 +2,15 @@ syntax = "proto3";
 package com.protocol.grpc;
 
 message SayPingRequest{
-  string gameName = 3;
+  string gameName = 3;        //fields for request
   string pingWord = 1;
 }
 
 message SayPongResponse{
-  string pongWord = 2;
+  string pongWord = 2;        //fields for Response
   string gameDescription = 4;
 }
 
 service PingPongService{
-  rpc say(SayPingRequest) returns (SayPongResponse);
+  rpc say(SayPingRequest) returns (SayPongResponse);    //we say: when you will obtain a response then return the response
 }

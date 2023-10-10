@@ -15,12 +15,12 @@ public class GrpcApplication {
 
         Server server = ServerBuilder
 	       .forPort(9090)
-	       .addService(new PingPongServiceImpl())
+	       .addService(new PingPongServiceImpl())	//add to server class with response
 	       .build();
 
         System.out.println("start server ...");
         server.start();
-        server.awaitTermination();
+        server.awaitTermination();			//continue works
     }
 
 }
